@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>华立E-sports项目数据监控看板</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-section">
+                <div class="logo">HE</div>
+                <div class="title">
+                    <h1>华立E-sports项目数据监控看板</h1>
+                    <p>实时追踪关键指标，优化项目执行效果</p>
+                </div>
+            </div>
+            <div class="controls">
+                <button class="btn btn-secondary" id="refreshBtn">
+                    <i class="fas fa-sync-alt"></i> 刷新数据
+                </button>
+                <button class="btn btn-primary" id="exportBtn">
+                    <i class="fas fa-file-excel"></i> 导出Excel
+                </button>
+            </div>
+        </header>
+
+        <div id="statsContainer" class="stats-container">
+            <!-- 数据卡片 -->
+        </div>
+
+        <div id="mainDashboard" class="dashboard">
+            <!-- 面板内容 -->
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">收入结构分析</h2>
+                </div>
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">月度指标趋势</h2>
+                </div>
+                <div class="chart-container">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p id="updateTime"></p>
+            <p>本看板数据每30分钟自动更新一次 | 技术支持: 华立数字创新中心</p>
+            <p id="countdown"></p>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
