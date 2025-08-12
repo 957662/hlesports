@@ -1,1 +1,261 @@
-[这里插入 hlesports.html 里的 <style> 内容]
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.title h1 {
+    font-size: 28px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 5px;
+}
+
+.title p {
+    color: #a0a0c0;
+    font-size: 16px;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    color: white;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.panel {
+    background: rgba(30, 30, 50, 0.7);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.panel-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #feb47b;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: rgba(20, 20, 40, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 30, 60, 0.9);
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 10px 0;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.stat-label {
+    color: #a0a0c0;
+    font-size: 14px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: rgba(255, 126, 95, 0.2);
+    color: #ff7e5f;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+tr:hover {
+    background: rgba(255, 126, 95, 0.1);
+}
+
+.status-cell {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.status-good {
+    background: rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+}
+
+.status-warning {
+    background: rgba(241, 196, 15, 0.2);
+    color: #f1c40f;
+}
+
+.status-bad {
+    background: rgba(231, 76, 60, 0.2);
+    color: #e74c3c;
+}
+
+.charts-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.chart-panel {
+    background: rgba(30, 30, 50, 0.7);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chart-container {
+    height: 300px;
+    position: relative;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 0;
+    color: #a0a0c0;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 992px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .charts-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+    .panel {
+        padding: 15px;
+    }
+}
